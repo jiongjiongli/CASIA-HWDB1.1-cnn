@@ -8,9 +8,9 @@ The training step took 22 hours.
 Prepare environment following steps in [README-ENV.md](/README-ENV.md)
 
 ## Usage
-In the releases section we uploaded a (zipped) [subset](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/HWDB1.1subset.hdf5.zip) of the CASIA-HWDB1.1 data set, the [network model](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/model.json), [network weights](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/weights.hdf5) and [some classifications](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/results.html), all generated following the steps below. If you use our subset, start from step 3.
+In the releases section we uploaded a (zipped) [subset](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/tree/master/download/HWDB1.1subset.hdf5.zip) of the CASIA-HWDB1.1 data set, the [network model](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/tree/master/download/model.json), [network weights](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/tree/master/download/weights.hdf5) and [some classifications](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/tree/master/download/results.html), all generated following the steps below. If you use our subset, start from step 3.
 
-0. Download the CASIA-HWDB1.1 data set from the official locations ([HWDB1.1trn_gnt_P1.zip](http://www.nlpr.ia.ac.cn/databases/Download/feature_data/HWDB1.1trn_gnt_P1.zip) (901 MB), ([HWDB1.1trn_gnt_P2.zip](http://www.nlpr.ia.ac.cn/databases/Download/feature_data/HWDB1.1trn_gnt_P2.zip) (947 MB) (Note: ([HWDB1.1trn_gnt.zip](http://www.nlpr.ia.ac.cn/databases/download/feature_data/HWDB1.1trn_gnt.zip) (1873 MB) is broken) and [HWDB1.1tst_gnt.zip](http://www.nlpr.ia.ac.cn/databases/download/feature_data/HWDB1.1tst_gnt.zip) (471 MB)) and unzip it (it is required to decompress an archive in ALZ format):
+0. Download the CASIA-HWDB1.1 data set from the official locations ([HWDB1.1trn_gnt_P1.zip](/tree/master/download/feature_data/HWDB1.1trn_gnt_P1.zip) (901 MB), ([HWDB1.1trn_gnt_P2.zip](/tree/master/download/feature_data/HWDB1.1trn_gnt_P2.zip) (947 MB) and [HWDB1.1tst_gnt.zip](/tree/master/download/feature_data/HWDB1.1tst_gnt.zip) (471 MB)) and unzip it (it is required to decompress an archive in ALZ format):
 ```
 $ unzip HWDB1.1trn_gnt_P1.zip
 [...]
@@ -60,6 +60,6 @@ Sample number: 11947
 --- 101.42111706733704 seconds ---
 ```
 ```
-5. (Optional) View results in [results.html](/download/results.html)
+5. (Optional) View results in [results.html](/tree/master/download/results.html)
 ```
 <img src="/dowload/results.png" alt="Results"/>
