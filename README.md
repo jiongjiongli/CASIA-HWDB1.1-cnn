@@ -59,5 +59,5 @@ Extracting some results...
 Sample number: 11947
 --- 101.42111706733704 seconds ---
 ```
-View the report [results.html](/download/results.html):
+5. (Optional) View the report [results.html](/download/results.html):
 <img src="/download/results.png" alt="Results"/>
