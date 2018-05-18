@@ -19,7 +19,6 @@ Anaconda3-5.1.0-Linux-x86_64.sh
 ```
 conda create -n py34 python=3.4 anaconda
 ```
-
 4. Activate environment
 ```
 source activate py34

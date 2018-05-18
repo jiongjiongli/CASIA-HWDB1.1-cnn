@@ -62,4 +62,4 @@ Sample number: 11947
 ```
 5. (Optional) View results in [results.html](/download/results.html)
 ```
-<img src="/dowload/results.png" alt="Results"/>
+<img src="/download/results.png" alt="Results"/>
