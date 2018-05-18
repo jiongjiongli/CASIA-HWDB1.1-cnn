@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # This script saves in a temporary folder the pictures of all the characters
 # of the subset, grouped by tagcode
 import os

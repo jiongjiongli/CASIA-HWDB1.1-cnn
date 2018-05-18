@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # This script counts the characters of the CASIA HWDB1.1 data set
 import sys
 from collections import Counter, defaultdict

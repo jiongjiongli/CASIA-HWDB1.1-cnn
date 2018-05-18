@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # This script is useful to check if the CASIA HWDB1.1 subset was created correctly
 import random
 import sys

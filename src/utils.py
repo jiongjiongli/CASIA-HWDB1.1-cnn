@@ -1,3 +1,4 @@
+from __future__ import print_function
 import os
 import struct
 
@@ -5,30 +6,36 @@ import numpy as np
 import scipy.misc
 import skimage.exposure
 
+TRN_SIZE = 893306
+TST_SIZE = 223991
 
 def read_gnt_in_directory(gnt_dirpath):
-    def samples(f):
-        header_size = 10
+    def samples(file_path, f):
+        HEADER_SIZE = 10
+        packed_length = f.read(4)
 
-        # read samples from f until no bytes remaining
-        while True:
-            header = np.fromfile(f, dtype='uint8', count=header_size)
-            if not header.size: break
+        while len(packed_length) == 4:
+            length = struct.unpack("<I", packed_length)[0]
+            raw_label = struct.unpack(">BB", f.read(2))
+            width = struct.unpack("<H", f.read(2))[0]
+            height = struct.unpack("<H", f.read(2))[0]
+            raw_photo_bytes = f.read(height * width)
+            if length != height * width + HEADER_SIZE or len(raw_photo_bytes) != height * width:
+                print("Warning! {0} {1} {2} {3} {4} {5} Actual: {6} Expected: {7}".format(file_path, packed_length, 
+                    length, raw_label, height, width, len(raw_photo_bytes), height * width))
+            else:
+                photo_bytes = struct.unpack("{}B".format(height * width), raw_photo_bytes)
+                bitmap = np.array(photo_bytes).reshape((height, width)).astype(np.uint8)
+                tagcode = (raw_label[0] << 8) + (raw_label[1])
+                yield bitmap, tagcode
+            packed_length = f.read(4)
 
-            sample_size = header[0] + (header[1]<<8) + (header[2]<<16) + (header[3]<<24)
-            tagcode = header[5] + (header[4]<<8)
-            width = header[6] + (header[7]<<8)
-            height = header[8] + (header[9]<<8)
-            assert header_size + width*height == sample_size
-
-            bitmap = np.fromfile(f, dtype='uint8', count=width*height).reshape((height, width))
-            yield bitmap, tagcode
-
+            
     for file_name in os.listdir(gnt_dirpath):
         if file_name.endswith('.gnt'):
             file_path = os.path.join(gnt_dirpath, file_name)
             with open(file_path, 'rb') as f:
-                for bitmap, tagcode in samples(f):
+                for bitmap, tagcode in samples(file_path, f):
                     yield bitmap, tagcode
 
 
@@ -46,8 +53,8 @@ def normalize_bitmap(bitmap):
     bitmap = np.lib.pad(bitmap, ((4, 4), (4, 4)), mode='constant', constant_values=255)
     assert bitmap.shape == (64, 64)
 
-    bitmap = np.expand_dims(bitmap, axis=0)
-    assert bitmap.shape == (1, 64, 64)
+    bitmap = np.expand_dims(bitmap, axis= -1)
+    assert bitmap.shape == (64, 64, 1)
     return bitmap
 
 def preprocess_bitmap(bitmap):

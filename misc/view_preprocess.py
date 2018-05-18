@@ -1,4 +1,4 @@
-#!/usr/bin/env python2
+#!/usr/bin/env python
 # This script can be used to see how bitmaps will be preprocessed before
 # subsetting the CASIA HWDB1.1 data set
 import sys
