@@ -5,8 +5,7 @@ Alessandro and Francesco
 This code was last testd on a virtual machine with i7-5557U CPU @ 3.10GHz × 2 (no GPU), and 4GB memory.
 The training step took 22 hours.
 ## Requisites
-Prepare environment following steps in README-ENV.md
-```
+Prepare environment following steps in [README-ENV.md](/README-ENV.md)
 
 ## Usage
 In the releases section we uploaded a (zipped) [subset](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/HWDB1.1subset.hdf5.zip) of the CASIA-HWDB1.1 data set, the [network model](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/model.json), [network weights](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/weights.hdf5) and [some classifications](https://github.com/jiongjiongli/CASIA-HWDB1.1-cnn/download/results.html), all generated following the steps below. If you use our subset, start from step 3.
