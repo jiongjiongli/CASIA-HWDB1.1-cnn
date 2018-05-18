@@ -1,8 +1,8 @@
 # CASIA-HWDB1.1-cnn
-This repository is based on [CASIA-HWDB1.1-cnn](https://github.com/integeruser/CASIA-HWDB1.1-cnn). Most works focus on compatibility with latest python (3.4) and keras (2.1.6), image preprocessing and test report generation. 
+This repository is based on [CASIA-HWDB1.1-cnn](https://github.com/integeruser/CASIA-HWDB1.1-cnn). Most works focus on compat with latest python (3.4) and keras (2.1.6), image preprocessing and test report generation. 
 
 This code was last testd in a virtual machine with i7-5557U CPU @ 3.10GHz × 2 (no GPU), and 4GB memory.
-The training stage took 22 hours.
+The training stage took 22 hours. Test accuracy is 95.7%.
 ## Requisites
 Prepare environment following [README-ENV.md](/README-ENV.md)
 
