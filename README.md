@@ -1,7 +1,6 @@
 # CASIA-HWDB1.1-cnn
-This repository contains our experiments with the deep learning library [Keras](http://keras.io/) and a subset of the [CASIA-HWDB1.1](http://www.nlpr.ia.ac.cn/databases/handwriting/Home.html) data set. The code here provided implements a convolutional neural network with test set accuracy greater than 95%. The network configuration is a simplified version of the one described in [Deep Convolutional Network for Handwritten Chinese Character Recognition](http://yuhao.im/files/Zhang_CNNChar.pdf) by Yuhao Zhang. No attempt was made to improve the accuracy of the model since we just wanted to play with convolutional networks and deep learning libraries.
+This repository is based on [CASIA-HWDB1.1-cnn](https://github.com/integeruser/CASIA-HWDB1.1-cnn). Most works focus on compatibility with latest python (3.4) and keras (2.1.6), image preprocessing and test report generation. 
 
-Alessandro and Francesco
 This code was last testd on a virtual machine with i7-5557U CPU @ 3.10GHz × 2 (no GPU), and 4GB memory.
 The training step took 22 hours.
 ## Requisites
